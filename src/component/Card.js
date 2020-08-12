@@ -10,7 +10,7 @@ function Card(props) {
     >
       <div className="card-heading">
         <h4>
-          <img src={flag} width="25px" height="15px" />
+          <img alt={`${name} flag`} src={flag} width="25px" height="15px" />
           &nbsp;{name}
         </h4>
       </div>

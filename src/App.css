@@ -1,4 +1,5 @@
 .card {
+  background-color: #fff;
   border: 1px solid #ddd;
   width: 14rem;
   border-radius: 3px;
@@ -73,6 +74,10 @@ th {
   margin: auto;
 }
 
+.table {
+  background: #fff;
+}
+
 .section {
   display: flex;
   flex-wrap: wrap;
@@ -93,6 +98,13 @@ th {
   height: 50px;
   background-size: cover;
   font-family: sans-serif;
+}
+.nav {
+  display: flex;
+    flex-wrap: wrap;
+    width: 92.5%;
+    margin: auto;
+    justify-content: space-between;
 }
 
 header {
@@ -117,6 +129,15 @@ header li a {
   font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;
+}
+
+@media(max-width: 400px) {
+  header {
+    height: 77px;
+  }
+  input[type="text"] {
+    margin-top: 8px;
+  }
 }
 
 /* countries-filters */
@@ -148,4 +169,10 @@ input[type="text"] {
   font-size: 18px;
   padding: 5px;
   outline: none;
+}
+
+@media(max-width: 500px) {
+  input[type="text"] {
+    margin-bottom: 13px;
+  }
 }

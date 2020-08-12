@@ -36,11 +36,11 @@ function Country(props) {
         </div>
       ) : (
         <div className="country">
-          <h1 className="country-heading">{data && data.name}</h1>
+          <h1 className="country-heading heading">{data && data.name}</h1>
           <div className="section">
             <div className="names section-info">
-              <h2>Names</h2>
-              <div>
+              <h2 className="heading">Names</h2>
+              <div className="table">
                 <table>
                   <tbody>
                     <tr>
@@ -64,8 +64,8 @@ function Country(props) {
               </div>
             </div>
             <div className="language section-info">
-              <h2>Language</h2>
-              <div>
+              <h2 className="heading">Language</h2>
+              <div className="table">
                 <table>
                   <tbody>
                     {data &&
@@ -83,8 +83,8 @@ function Country(props) {
             </div>
 
             <div className="geography section-info">
-              <h2>Geography</h2>
-              <div>
+              <h2 className="heading">Geography</h2>
+              <div className="table">
                 <table>
                   <tbody>
                     <tr>
@@ -105,7 +105,7 @@ function Country(props) {
                     </tr>
                     <tr>
                       <th>Lat/Lng</th>
-                      <td>{data && `${data.latlng[0]}, ${data.latlng[1]}`}</td>
+                      <td>{data && `${data.latlng[0]}/${data.latlng[1]}`}</td>
                     </tr>
                     <tr>
                       <th>Area</th>
@@ -135,8 +135,8 @@ function Country(props) {
               </div>
             </div>
             <div className="codes section-info">
-              <h2>Codes</h2>
-              <div>
+              <h2 className="heading">Codes</h2>
+              <div className="table">
                 <table>
                   <tbody>
                     <tr>
@@ -164,8 +164,8 @@ function Country(props) {
               </div>
             </div>
             <div className="flag section-info">
-              <h2>Flag</h2>
-              <img src={data && data.flag} width="350px" />
+              <h2 className="heading">Flag</h2>
+              <img alt={`${data.name} flag`} src={data && data.flag} width="350px" />
             </div>
           </div>
         </div>
