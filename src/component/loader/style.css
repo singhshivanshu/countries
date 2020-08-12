@@ -1,0 +1,39 @@
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loader div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 10px;
+  background: rgb(0, 0, 0);
+  animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.loader div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.5s;
+  background-color: yellow;
+}
+.loader div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.25s;
+}
+.loader div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+  background-color: rgb(255, 81, 0);
+}
+@keyframes loader {
+  0% {
+    top: 8px;
+    height: 120px;
+  }
+  50%,
+  100% {
+    top: 50px;
+    height: 60px;
+  }
+}
