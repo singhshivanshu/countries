@@ -1,12 +1,19 @@
 import React from "react";
 
 function Card(props) {
-  const { name, alpha3Code, region } = props.datum;
-
+  const { name, alpha3Code, region, flag } = props.datum;
 
   return (
-    <div className="card" onClick={() => window.location.href = `${alpha3Code}/country` }>
-      <div className="card-heading">{name}</div>
+    <div
+      className="card"
+      onClick={() => (window.location.href = `${alpha3Code}/country`)}
+    >
+      <div className="card-heading">
+        <h4>
+          <img src={flag} width="25px" height="15px" />
+          &nbsp;{name}
+        </h4>
+      </div>
       <div className="card-body">
         <table>
           <tbody>

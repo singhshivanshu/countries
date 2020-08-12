@@ -16,7 +16,6 @@ function Countries() {
     setRegionData(data);
   };
 
-  console.log(data);
 
   useEffect(() => {
     fetchData();

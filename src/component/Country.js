@@ -8,8 +8,6 @@ function Country(props) {
   const [data, setData] = useState();
   const history = useHistory();
 
-  console.log(props);
-
   const fetchData = async () => {
     let result = await fetch(
       `https://restcountries.eu/rest/v2/alpha/${props.match.params.id}`
@@ -28,6 +26,7 @@ function Country(props) {
   };
 
   console.log(data);
+
   return (
     <>
       {" "}
@@ -50,20 +49,39 @@ function Country(props) {
                     </tr>
                     <tr>
                       <th>Official</th>
-                      <td>{data && data.altSpellings[2]}</td>
+                      <td>{(data && data.altSpellings[2]) || data.name}</td>
                     </tr>
                     <tr>
                       <th>Common (Native)</th>
-                      <td>{data && data.altSpellings[1]}</td>
+                      <td>{(data && data.altSpellings[1]) || data.name}</td>
                     </tr>
                     <tr>
                       <th>Official (Native)</th>
-                      <td>{data && data.altSpellings[3]}</td>
+                      <td>{(data && data.altSpellings[3]) || data.name}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+            <div className="language section-info">
+              <h2>Language</h2>
+              <div>
+                <table>
+                  <tbody>
+                    {data &&
+                      data.languages.map((lang, index) => {
+                        return (
+                          <tr key={index}>
+                            <th>{`Language(${lang.iso639_1})`}</th>
+                            <td>{data && lang.nativeName}</td>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
             <div className="geography section-info">
               <h2>Geography</h2>
               <div>
@@ -96,12 +114,20 @@ function Country(props) {
                     <tr>
                       <th>Land borders</th>
                       <td>
-                        {data &&
-                          data.borders.map((ele, index) => (
-                            <span key={index} onClick={() => handleClick(ele)}>
-                              {ele},{" "}
-                            </span>
-                          ))}
+                        {data && data.borders.length !== 0
+                          ? data &&
+                            data.borders.map((ele, index) => (
+                              <span
+                                className="border"
+                                key={index}
+                                onClick={() => handleClick(ele)}
+                              >
+                                {index < data.borders.length - 1
+                                  ? ele + ", "
+                                  : ele}
+                              </span>
+                            ))
+                          : "N/A"}
                       </td>
                     </tr>
                   </tbody>
@@ -136,6 +162,10 @@ function Country(props) {
                   </tbody>
                 </table>
               </div>
+            </div>
+            <div className="flag section-info">
+              <h2>Flag</h2>
+              <img src={data && data.flag} width="350px" />
             </div>
           </div>
         </div>
