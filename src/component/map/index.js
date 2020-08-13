@@ -12,7 +12,7 @@ function CountryMap(props) {
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_KEY}}
         defaultCenter={{ lat: lat, lng: lng }}
-        defaultZoom={1}
+        defaultZoom={4}
       >
         <AnyReactComponent
         lat={lat}
