@@ -5,6 +5,10 @@ import { Switch, Route } from "react-router-dom";
 import Country from "./component/Country";
 import Header from "./component/Header";
 
+import dotenv from 'dotenv';
+
+dotenv.config()
+
 function App() {
   return (
     <div className="App">
