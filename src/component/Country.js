@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import { generatePath } from "react-router";
 import Loader from "./loader";
+import CountryMap from "./map";
 
 function Country(props) {
   const [data, setData] = useState();
@@ -24,8 +25,6 @@ function Country(props) {
     const path = generatePath(props.match.path, { id: ele });
     history.push(path);
   };
-
-  console.log(data);
 
   return (
     <>
@@ -166,6 +165,10 @@ function Country(props) {
             <div className="flag section-info">
               <h2 className="heading">Flag</h2>
               <img alt={`${data.name} flag`} src={data && data.flag} width="350px" />
+            </div>
+            <div className="map section-info">
+              <h2 className="heading">Map</h2>
+              <CountryMap lat={data &&data.latlng[0]} lng={ data && data.latlng[1]} name ={data && data.name} />
             </div>
           </div>
         </div>
