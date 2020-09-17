@@ -1,5 +1,9 @@
 .app{
   height: 100%;
+  
+}
+.App {
+  min-height: 1000px ;
 }
 .card {
   background-color: #fff;

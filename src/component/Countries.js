@@ -30,6 +30,8 @@ function Countries() {
     } else if (e.target.value === "All") {
       setRegionData(data);
     }
+    setNewData([])
+    setInput('')
   };
 
   const onInputChange = (e) => {

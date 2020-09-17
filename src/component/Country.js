@@ -168,7 +168,7 @@ function Country(props) {
             </div>
             <div className="map section-info">
               <h2 className="heading">Map</h2>
-              <CountryMap lat={data &&data.latlng[0]} lng={ data && data.latlng[1]} name ={data && data.name} />
+              <CountryMap key={Date.now()} lat={data &&data.latlng[0]} lng={ data && data.latlng[1]} name ={data && data.name} />
             </div>
           </div>
         </div>
